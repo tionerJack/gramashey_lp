@@ -1,6 +1,7 @@
 idea/
 .vscode/
 
+/build/
 # Flutter/Dart specific
 **/ios/Flutter/.last_build_id
 **/ios/Flutter/App.framework
