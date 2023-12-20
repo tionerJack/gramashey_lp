@@ -1,0 +1,38 @@
+idea/
+.vscode/
+
+# Flutter/Dart specific
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/flutter_project.vcxproj
+**/ios/Flutter/flutter_project.vcxproj.filters
+**/ios/Flutter/flutter_project.xcodeproj/
+**/ios/Flutter/flutter_export_environment.plist
+**/ios/Runner.xcworkspace/
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+**/android/.gradle/
+**/android/build/
+**/android/gradle/
+**/android/app/build/
+**/android/app/.externalNativeBuild/
+**/android/app/src/main/flutter_assets/
+
+# Miscellaneous
+.DS_Store
+*.iml
+*.log
+*.project
+*.xcuserstate
+.buildlog/
+.history/
+
+# Generated files
+*.lock
+pubspec.yaml.lock
