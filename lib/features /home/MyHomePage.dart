@@ -21,29 +21,90 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Gramashey"),
+        title: const Center(
+            child: Text(
+          "Impermeabilizante Gramashey",
+          textScaleFactor: .9,
+        )),
       ),
+
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.height * .03),
         child: Column(
-          children: <Widget>[
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height * .02),
                   child: Image.asset(
                     "imp15.png",
-                    fit: BoxFit.fill,
-                    height: MediaQuery.of(context).size.height * .6,
+                    fit: BoxFit.cover,
+                    height: MediaQuery.of(context).size.height * .55,
                   ),
                 )
               ],
             ),
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
             Text(
-              '$_counter',
+              'Protege tu hogar y el medio ambiente ',
+              textAlign: TextAlign.left,
               style: Theme.of(context).textTheme.headlineMedium,
+              textScaleFactor: .6,
             ),
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            Container(
+              height: MediaQuery.of(context).size.height * .3,
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                ],
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            Text(
+              'Facil de aplicar ',
+              textAlign: TextAlign.left,
+              style: Theme.of(context).textTheme.headlineMedium,
+              textScaleFactor: .6,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            Container(
+              height: MediaQuery.of(context).size.height * .3,
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * .3,
+                      child: Placeholder()),
+                ],
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .03),
           ],
         ),
       ),
