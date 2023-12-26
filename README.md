@@ -1,16 +1,64 @@
-# gramashey_web
 
-A new Flutter project.
+Estructura de la Página de Inicio:
+Cabecera (Header)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Menú de navegación: Inicio, Productos, Sobre Nosotros, Aplicaciones, Testimonios, Contacto.
+Barra de búsqueda.
 
-A few resources to get you started if this is your first Flutter project:
+Iconos de acceso rápido a cuenta de usuario y carrito de compras.
+Banner Principal (Hero Section)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Imagen destacada del producto con eslogan y llamado a la acción (CTA) como "Compra ahora" o "Más información".
+Ventajas y Características
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Sección con íconos y breves descripciones de los beneficios del producto (ecológico, duradero, fácil de aplicar).
+Productos Destacados
+
+Galería de productos con opción de compra rápida.
+Sobre Nosotros
+
+Breve descripción de la empresa, misión y valores.
+Aplicaciones del Producto
+
+Imágenes y descripciones de diferentes usos y aplicaciones del impermeabilizante.
+Testimonios de Clientes
+
+Reseñas y comentarios de clientes satisfechos.
+Pie de Página (Footer)
+
+Información de contacto.
+Enlaces a redes sociales.
+Enlaces rápidos a políticas de privacidad y términos de servicio.
+Diseño de Página de Producto:
+Imágenes de Producto
+
+Galería de imágenes con vistas detalladas del producto.
+Descripción de Producto
+
+Detalles del producto, instrucciones de uso, información de garantía.
+Opciones de Producto
+
+Selección de tamaño o cantidad.
+Reseñas de Producto
+
+Sección para que los usuarios dejen y lean reseñas.
+Productos Relacionados
+
+Recomendaciones de productos similares o complementarios.
+Otras Páginas:
+Sobre Nosotros: Historia de la marca, detalles del equipo, compromiso ecológico.
+Aplicaciones: Guías detalladas y tutoriales de cómo aplicar el producto.
+Contacto: Formulario de contacto, mapa de ubicación, números de teléfono.
+Funcionalidad Backend:
+Gestión de Productos: Para agregar, editar y eliminar productos.
+Sistema de Gestión de Pedidos: Para procesar pedidos, pagos y envíos.
+Base de Datos de Clientes: Para gestionar cuentas y preferencias de los clientes.
+Análisis e Informes: Herramientas de análisis para rastrear ventas, visitas y comportamiento de los usuarios.
+
+
+
+
+
+
+
