@@ -1,6 +1,8 @@
 import 'dart:js_interop';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -69,13 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             SizedBox(height: MediaQuery.of(context).size.height * .03),
-            Text(
-              'Beneficios',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headlineMedium,
-              textScaleFactor: .6,
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            Divider(),
             ...benefits
                 .map((e) {
                   Image img = Image.asset(
@@ -94,71 +90,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 })
                 .expand((element) => [element, Divider()])
                 .toList(),
-            SizedBox(height: MediaQuery.of(context).size.height * .03),
-            Text(
-              'Facil de aplicar ',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headlineMedium,
-              textScaleFactor: .6,
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * .03),
-            Container(
-              height: MediaQuery.of(context).size.height * .3,
-              width: double.infinity,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                ],
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * .03),
-            Text(
-              'Testimonios ',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headlineMedium,
-              textScaleFactor: .6,
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * .3,
-              width: double.infinity,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                  Container(
-                      height: MediaQuery.of(context).size.height * .3,
-                      child: Placeholder()),
-                ],
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * .03),
+            SizedBox(height: MediaQuery.of(context).size.height * .15),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          String url = "https://wa.me/527291469030?text=Hola";
+          launchUrl(Uri(path: url));
+        },
         tooltip: 'Increment',
-        child: const Icon(Icons.abc),
+        backgroundColor: Colors.green.shade800,
+        child: const Icon(
+          FontAwesomeIcons.whatsapp,
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
