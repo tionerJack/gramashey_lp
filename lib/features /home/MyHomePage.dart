@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.height * .03),
+            horizontal: MediaQuery.of(context).size.height * .02),
         child: Column(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * .03),
@@ -64,8 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   child: Image.asset(
                     "img15.png",
-                    fit: BoxFit.cover,
-                    height: MediaQuery.of(context).size.height * .55,
+                    fit: BoxFit.contain,
+                    height: MediaQuery.of(context).size.height * .5,
+                    width: MediaQuery.of(context).size.width * .85,
                   ),
                 )
               ],
