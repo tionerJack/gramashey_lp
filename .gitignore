@@ -1,6 +1,6 @@
 idea/
 .vscode/
-
+.firebase/
 build/
 .dart_tool/
 
