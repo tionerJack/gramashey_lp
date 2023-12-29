@@ -1,4 +1,3 @@
-import 'dart:js_interop';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -68,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ...benefits
                 .map((e) => BenefitListTile(
                       assetName: e["img"]!,
-                      height: 100,
+                      height: MediaQuery.of(context).size.height * .1,
                       leading: benefits.indexOf(e).isEven,
                       title: e["title"]!,
                       topMargin: MediaQuery.of(context).size.height,
@@ -146,6 +145,7 @@ class _BenefitListTileState extends State<BenefitListTile> {
         widget.assetName,
         fit: BoxFit.cover,
         height: widget.height,
+        width: widget.height,
       ),
     );
 
@@ -153,7 +153,7 @@ class _BenefitListTileState extends State<BenefitListTile> {
       minLeadingWidth: widget.height,
       leading: widget.leading ? img : null,
       trailing: !widget.leading ? img : null,
-      title: Text(widget.title),
+      title: Text(widget.title, textScaleFactor: .9),
     );
   }
 }
