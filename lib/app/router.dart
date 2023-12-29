@@ -9,13 +9,5 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
     builder: (BuildContext context, GoRouterState state) {
       return MyHomePage();
     },
-    routes: <RouteBase>[
-      GoRoute(
-        path: 'details',
-        builder: (BuildContext context, GoRouterState state) {
-          return const Text("");
-        },
-      ),
-    ],
   ),
 ]);
