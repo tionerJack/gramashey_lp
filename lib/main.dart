@@ -1,16 +1,16 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gramashey_web/app/const/routes/router.dart';
-import 'package:gramashey_web/features%20/home/MyHomePage.dart';
 import 'dart:html' as html;
 
 import 'app/const/theme/index.dart';
 
 Future<void> main() async {
-  runApp(const MyApp());
-  html.document.getElementById('centered')!.remove();
+  runApp(const ProviderScope(
+    child: MyApp(),
+  ));
+  html.document.getElementById('centered')?.remove();
 }
 
 class MyApp extends StatelessWidget {

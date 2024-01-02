@@ -1,25 +1,27 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:gramashey_web/features%20/home/models/Benefit.dart';
+import 'package:gramashey_web/features%20/home/BenefitsProvider.dart';
 
 class BenefitListTile extends StatefulWidget {
   final bool leading;
 
-  final String assetName;
-
   final double height;
-
-  final String title;
 
   final double topMargin;
 
-  const BenefitListTile(
-      {super.key,
-      this.leading = true,
-      required this.assetName,
-      this.title = "",
-      this.height = 100,
-      this.topMargin = 100});
+  final Benefit benefit;
+
+  const BenefitListTile({
+    super.key,
+    this.leading = true,
+    required this.benefit,
+    this.height = 100,
+    this.topMargin = 100,
+  });
 
   @override
   State<BenefitListTile> createState() => _BenefitListTileState();
@@ -49,19 +51,30 @@ class _BenefitListTileState extends State<BenefitListTile> {
       curve: Curves.bounceOut,
       transform: Transform.translate(offset: Offset(0, _topMargin)).transform,
       duration: const Duration(seconds: 3),
-      child: Image.asset(
-        widget.assetName,
-        fit: BoxFit.cover,
-        height: widget.height,
-        width: widget.height,
+      child: Hero(
+        tag: widget.benefit.img,
+        child: Image.asset(
+          widget.benefit.img,
+          fit: BoxFit.cover,
+          height: widget.height,
+          width: widget.height,
+        ),
       ),
     );
 
-    return ListTile(
-      minLeadingWidth: widget.height,
-      leading: widget.leading ? img : null,
-      trailing: !widget.leading ? img : null,
-      title: Text(widget.title, textScaleFactor: .9),
+    return Consumer(
+      builder: (context, ref, child) {
+        return ListTile(
+          minLeadingWidth: widget.height,
+          leading: widget.leading ? img : null,
+          trailing: !widget.leading ? img : null,
+          title: Text(widget.benefit.title, textScaleFactor: .9),
+          onTap: () {
+            ref.read(selectedBenefitProvider.notifier).state = widget.benefit;
+            context.go(widget.benefit.path);
+          },
+        );
+      },
     );
   }
 }
