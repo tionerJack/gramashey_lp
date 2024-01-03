@@ -14,10 +14,41 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final ScrollController _scrollController = ScrollController();
+  bool isAtBottom = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _scrollController.addListener(_scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    super.dispose();
+  }
+
+  void _scrollListener() {
+    if (_scrollController.offset >=
+            _scrollController.position.maxScrollExtent &&
+        !_scrollController.position.outOfRange) {
+      setState(() {
+        isAtBottom = true;
+      });
+    } else {
+      setState(() {
+        isAtBottom = false;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _scrollController,
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.height * .02),
         child: Consumer(
@@ -41,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height * .03),
-              Divider(),
+              const Divider(),
               ...benefits
                   .map((e) => BenefitListTile(
                         benefit: e,
@@ -56,18 +87,24 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         }),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          String url = "https://wa.me/527291469030?text=Hola";
-          await launchUrl(Uri.parse(url),
-              mode: LaunchMode.externalNonBrowserApplication);
-        },
-        tooltip: 'Increment',
-        backgroundColor: Colors.green.shade800,
-        child: const Icon(
-          FontAwesomeIcons.whatsapp,
-        ),
-      ),
+      floatingActionButton: isAtBottom
+          ? FloatingActionButton.extended(
+              onPressed: _launchWhats,
+              label: const Text('Mas información'),
+              icon: const Icon(FontAwesomeIcons.whatsapp),
+              backgroundColor: Colors.green.shade800,
+            )
+          : FloatingActionButton(
+              onPressed: _launchWhats,
+              backgroundColor: Colors.green.shade800,
+              child: const Icon(FontAwesomeIcons.whatsapp),
+            ),
     );
+  }
+
+  void _launchWhats() async {
+    const url = "https://wa.me/527291469030?text=Hola";
+    await launchUrl(Uri.parse(url),
+        mode: LaunchMode.externalNonBrowserApplication);
   }
 }

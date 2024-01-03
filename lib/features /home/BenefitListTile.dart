@@ -68,7 +68,7 @@ class _BenefitListTileState extends State<BenefitListTile> {
           minLeadingWidth: widget.height,
           leading: widget.leading ? img : null,
           trailing: !widget.leading ? img : null,
-          title: Text(widget.benefit.title, textScaleFactor: .9),
+          title: Text(widget.benefit.abstract, textScaleFactor: .9),
           onTap: () {
             ref.read(selectedBenefitProvider.notifier).state = widget.benefit;
 
